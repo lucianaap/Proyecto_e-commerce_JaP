@@ -17,4 +17,4 @@ function cargarDatos (url){
     })
     .catch(error => alert("Hubo un error: " + error));
 }
-function cargarDatos (PRODUCTS_URL){}
+cargarDatos (PRODUCTS_URL)
