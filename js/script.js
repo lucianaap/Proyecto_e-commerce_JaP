@@ -1,7 +1,7 @@
-function cargarDatos (url){
+function cargarDatos (PRODUCTS_URL){
     document.getElementById("carga_productos").innerHTML = "";
 
-    fetch(url)
+    fetch(PRODUCTS_URL)
     .then (respuesta => respuesta.json())
     .then (datos => {
         datos.forEach(element => {
