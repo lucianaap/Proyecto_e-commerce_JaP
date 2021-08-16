@@ -1,7 +1,7 @@
-function cargarDatos (PRODUCTS_URL){
+function cargarDatos (url){
     document.getElementById("carga_productos").innerHTML = "";
 
-    fetch(PRODUCTS_URL)
+    fetch(url)
     .then (respuesta => respuesta.json())
     .then (datos => {
         datos.forEach(element => {
@@ -17,3 +17,4 @@ function cargarDatos (PRODUCTS_URL){
     })
     .catch(error => alert("Hubo un error: " + error));
 }
+function cargarDatos (PRODUCTS_URL)
