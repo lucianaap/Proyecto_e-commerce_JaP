@@ -139,11 +139,7 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
-h1 {
-  color: black;
-  font-size: 5cm;
-}
 #logo_login {
-  float: left;
+  float: inline-start;
   margin:0 10px 10px 0;
 }
