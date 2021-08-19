@@ -1,11 +1,11 @@
 function loginIngresarRedireccionar(email, password) {
     if (email.trim()==="" || password.trim()==="") {
-        alert ("Hay campos que debe llenar para ingresar")
-
-    }
-
-
-    location.href="index.html";
+        alert ("Hay campos que debe rellenar para ingresar")
+    } else {   
+        location.href="index.html";
+        
+        }
+   
 }
 
 
