@@ -8,7 +8,7 @@ function showProductsList(productsArray) {
         list +=  autos.description + "<br>";3
         list += autos.cost + "<br>";
         list += autos.currency + "<br>";
-        list += autos.soldCount + "<br>";
+        list += "Total productos vendidos:" + autos.soldCount + "<br>";
         list += "<br><hr><br>"
     };
     document.getElementById("lista-productos").innerHTML =list;
