@@ -4,9 +4,9 @@
 document.addEventListener("DOMContentLoaded", function(e){
 
 });
-function loginRedirect(){
-    document.getElementById("ingresar").window.location.href= "https://lucianaap.github.io/Proyecto_e-commerce_JaP/"
-}
-loginRedirect();
 
+
+function loginRedirect() {
+    location.href="index.html";
+}
 
