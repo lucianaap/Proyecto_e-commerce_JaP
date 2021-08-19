@@ -141,8 +141,8 @@ a.custom-card:hover {
 }
 
 #lista-productos{
-  font-weight: bolder;
    border-style: groove;
+   margin: 40px 40px 40px 120px;
  }
 
  #logo-login{
@@ -152,4 +152,7 @@ a.custom-card:hover {
 
  #imagen-producto{
    width: 300px;
+   border-style: double;
+   margin:0px 10px 10px 0px;
+   
  }
