@@ -144,3 +144,8 @@ a.custom-card:hover {
   font-weight: bolder;
    border-style: groove;
  }
+
+ #logo-login{
+   width: 400px;
+   
+ }
