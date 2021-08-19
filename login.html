@@ -46,19 +46,23 @@
       <img id="logo_login" src="img/Logo JaP.png" alt="logo JaP">
       <h1 class="h1">Por favor Inicie Sesión</h1>
       <label for="inputEmail" class="sr-only">Dirección de Email </label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Dirección de Email" required>
+      <input type="email" id="dato" class="form-control" placeholder="Dirección de Email" required>
       <label for="inputPassword" class="sr-only">Contraseña</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Introduzca su contraseña" required>
+      <input type="password" id="pass" class="form-control" placeholder="Introduzca su contraseña" required>
       <label>
         <input type="checkbox" value="recordarme">
         Recordarme
       </label>
        <br>
-      <label>
-        <input id="ingresar" type="button" onclick="loginRedirect" value="Ingresar">
-      </label>
+           
     </form>
-   
+    
+    <label>
+      <button onclick="loginRedirect()">Ingresar</button>
+    </label>
+
+    
+
   </div>
 
   <script src="js/init.js"></script>
