@@ -142,7 +142,7 @@ a.custom-card:hover {
 
 #lista-productos{
    border-style: groove;
-   margin: 40px 40px 40px 120px;
+
  }
 
  #logo-login{
@@ -151,8 +151,36 @@ a.custom-card:hover {
  }
 
  #imagen-producto{
-   width: 300px;
+   width: 200px;
    border-style: double;
-   margin:0px 10px 10px 0px;
-   
  }
+ 
+ #imagen-producto:hover{
+   -webkit-transform: scale(1.4);
+   -moz-transform: scale(1.4);
+   -o-transform: scale(1.4);
+   -ms-transform: scale(1.4);
+   transform: scale(1.4);
+ }
+
+ #login-button{
+   background-color: skyblue;
+   border-radius: 8px;
+   border: 2px solid black;
+   font-size: 15px;
+   font-weight: bolder;
+   padding: 10px 25px;
+   opacity: 0.6;
+   transition: 0.3s;
+   display: inline-block;
+   text-decoration: none;
+   cursor: pointer;
+ }
+
+ #login-button:hover {
+   opacity: 1
+}
+
+#autos-name{
+  font-weight: bolder;
+}
