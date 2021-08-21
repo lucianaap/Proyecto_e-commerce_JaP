@@ -4,7 +4,7 @@ function loginRedirect (){
     if (email.value === "" || contraseña.value === ""){
         alert ("Necesita rellenar los campos vacíos")
     } else{
-        window.location = "index.html";
+        window.location = "inicio.html";
     }
 
 }

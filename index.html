@@ -49,20 +49,17 @@
     <form class="signin" >
       <img id="logo-login" src="img/login.png" alt="logo login">
       <h1 class="h1">Por favor Inicie Sesión</h1>
-      <input type="email" id="email-form" class="form-control" placeholder="Dirección de Email" required>
+      <input type="email" id="email-form" class="form-control" placeholder="Dirección de Email">
       <br>
-      <input type="password" id="password-form" class="form-control" placeholder="Introduzca su contraseña" required>
+      <input type="password" id="password-form" class="form-control" placeholder="Introduzca su contraseña">
       <br>
       <label>
         <input type="checkbox" value="recordarme">
         Recordarme
       </label>
-       <br>
-                
+       <br>     
     </form>
-    <label>
-      <button id="login-button" onclick="loginRedirect()">Ingresar</button>
-    </label>
+    <input type="submit" id="login-button" onclick="loginRedirect()" value="Ingresar">
   </div>
 
   <script src="js/init.js"></script>
