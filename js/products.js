@@ -1,5 +1,4 @@
 var productsArray = [];
-var imagenesArray = [];
 function showProductsList(productsArray) {
     let list = "<hr>"
     for (let i = 0; i< productsArray.length; i++){
