@@ -184,3 +184,23 @@ a.custom-card:hover {
 #autos-name{
   font-weight: bolder;
 }
+#save-button{
+  background-color: skyblue;
+  border-radius: 8px;
+  border: 1px solid black;
+  font-size: 10px;
+  font-weight: bolder;
+  padding: 10px 10px;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#save-button:hover {
+  background-color: rgb(199, 75, 116);
+}
+.usuario{
+  color: white;
+  background-color: rgb(54, 54, 66);
+}
