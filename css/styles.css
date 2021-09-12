@@ -262,3 +262,69 @@ a.custom-card:hover {
 #limpiar:hover{
   background-color: rgb(161, 110, 14) ;
 }
+
+#mas-info{
+  background-color: rgb(245, 211, 147);
+  float: right;
+}
+#mas-info:hover{
+  background-color: rgb(161, 110, 14) ;
+}
+
+#informacion_adicional{
+  text-align: left;
+}
+
+#productName{
+  text-align: center;
+}
+
+#usuario_comentario{
+  font-weight: bolder;
+}
+
+#usuario_puntuación{
+  float: right;
+}
+
+#form {
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+#form p {
+  text-align: center;
+}
+
+#form label {
+  font-size: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: black;
+}
+
+.clasificacion {
+  direction: rtl;
+}
+
+label:hover,
+label:hover ~ label {
+  color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+#btnEnviar{
+  background-color: rgb(245, 211, 147);
+}
+#btnEnviar:hover{
+  background-color: rgb(161, 110, 14) ;
+}

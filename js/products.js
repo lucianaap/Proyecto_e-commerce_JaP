@@ -8,6 +8,11 @@ let sort_by_mayor_precio = "Mayor Precio"
 let currentSortCriteria;
 
 
+
+function masInfo(){
+    window.location = "product-info.html";
+}
+
 function showProductsList() {
 
     let list = "<hr>"
@@ -24,6 +29,7 @@ function showProductsList() {
                 list += `<h4 id="autos-name" class="mb-1">` + autos.name + `</h4>` + "<br>";
                 list += autos.description + "<br>";
                 list += autos.cost + " " + autos.currency + "<br>" + "<br>";
+                list += '<button id="mas-info" onclick="masInfo()">Más información</button><br/><br/>'
                 list += `<small id="autos-soldCount">` + autos.soldCount + ` unidades vendidas</small>` + "<br>"
                 list += "<br><hr><br>"
             }
