@@ -9,7 +9,7 @@ let currentSortCriteria;
 
 
 
-function masInfo(){
+function masInfo(name){
     window.location = "product-info.html";
 }
 
