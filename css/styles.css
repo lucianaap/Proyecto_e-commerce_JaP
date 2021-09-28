@@ -328,3 +328,30 @@ input[type="radio"]:checked ~ label {
 #btnEnviar:hover{
   background-color: rgb(161, 110, 14) ;
 }
+
+.productReleted{
+  float: left;
+  width: 200px;
+  margin: 0px 20px 0px 0px;
+  filter: drop-shadow(10px);
+  filter: grayscale(100%);
+
+}
+
+.productReleted:hover{
+-webkit-transform: rotateY(180deg);
+-webkit-transform-style: preserve-3d;
+transform: rotateY(180deg);
+transform-style: preserve-3d;
+filter: grayscale(0%);
+}
+
+#dropdownMenuButton{
+  background-color: rgb(46, 59, 59);
+  border: rgb(46, 59, 59);
+  padding: 5px 5px 0px 5px;
+}
+
+#cerrarSesion:hover{
+  background-color: rgb(230, 80, 80);
+}

@@ -1,5 +1,32 @@
 let product = {};
 let commentsArray = [];
+let productsArrayReletedProducts = [];
+
+function showReletedProducts1() {
+
+    let contenido1 = "";
+    let contenido2 = "";
+
+
+    for (let i = 3; i < productsArrayReletedProducts.length; i++) {
+
+        let auto1 = productsArrayReletedProducts[1];
+        let auto2 = productsArrayReletedProducts[3]
+
+
+        contenido1 += "<br>" + `<img class= "productReleted" src=" ` + auto1.imgSrc + `"alt = ` + auto1.description + `` + "<br>" + "<br>"
+        contenido1 += `<h6 id="autos-name" class="mb-1">` + auto1.name + `</h6>` + "<br>";
+        contenido1 += `<small>` + auto1.description + `</small>` + "<br><br>";
+        contenido2 += "<br>" + `<img class= "productReleted"  src=" ` + auto2.imgSrc + `"alt = ` + auto2.description + `` + "<br>" + "<br>"
+        contenido2 += `<h6 id="autos-name" class="mb-1">` + auto2.name + `</h6>` + "<br>";
+        contenido2 += `<small>` + auto2.description + `<small>` + "<br>";
+    }
+
+    document.querySelector("#reletedProducts1").innerHTML = contenido1;
+    document.querySelector("#reletedProducts2").innerHTML = contenido2;
+
+}
+
 
 function showImagesGallery(array) {
 
@@ -9,6 +36,7 @@ function showImagesGallery(array) {
         let imageSrc = array[i];
 
         htmlContentToAppend += `
+        
         <div class="col-lg-3 col-md-4 col-6">
             <div class="d-block mb-4 h-100">
                 <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
@@ -61,8 +89,20 @@ document.addEventListener("DOMContentLoaded", function (e) {
             productCategoryHTML.innerHTML = product.category;
             showImagesGallery(product.images);
 
+
+        }
+
+
+
+    });
+
+    getJSONData(PRODUCTS_URL).then(function (resultObj) {
+        if (resultObj.status === "ok") {
+            productsArrayReletedProducts = resultObj.data;
+            showReletedProducts1(productsArrayReletedProducts);
         }
     });
+
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
             commentsArray = resultObj.data;

@@ -7,9 +7,7 @@ let sort_by_menor_precio = "Menor Precio"
 let sort_by_mayor_precio = "Mayor Precio"
 let currentSortCriteria;
 
-
-
-function masInfo(name){
+function masInfo(){
     window.location = "product-info.html";
 }
 
@@ -112,6 +110,8 @@ function OrdenarYMostarProductos(sortCriteria, currentProductsArray) {
 
 
 
+
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -152,8 +152,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         showProductsList();
     })
-
-   
 
     
 
