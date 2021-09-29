@@ -355,3 +355,9 @@ filter: grayscale(0%);
 #cerrarSesion:hover{
   background-color: rgb(230, 80, 80);
 }
+
+#reletedProducts2{
+  margin: -150px 0px 0px 600px;
+}
+
+
