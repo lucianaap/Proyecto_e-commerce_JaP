@@ -2,6 +2,11 @@ let product = {};
 let commentsArray = [];
 let productsArrayReletedProducts = [];
 
+
+function redirigirProductos(){
+    window.location = "products.html"
+}
+
 function showReletedProducts() {
 
     let contenido1 = "";
@@ -13,11 +18,11 @@ function showReletedProducts() {
         let auto1 = productsArrayReletedProducts[1];
         let auto2 = productsArrayReletedProducts[3]
 
-        contenido1 += "<br>" + `<img class= "productReleted" src=" ` + auto1.imgSrc + `"alt = ` + auto1.description + `` + "<br>" + "<br>"
-        contenido1 += `<h6 id="autos-name" class="mb-1">` + auto1.name + `</h6>` + "<br>";
+        contenido1 += "<br>" + `<img onclick="redirigirProductos()" class= "productReleted" src=" ` + auto1.imgSrc + `"alt = ` + auto1.description + `` + "<br>" + "<br>"
+        contenido1 += `<h6  onclick="redirigirProductos()" id="autos-name" class="mb-1">` + auto1.name + `</h6>` + "<br>";
         contenido1 += `<small>` + auto1.description + `</small>`
-        contenido2 += "<br>" + `<img id="imgReletedProduct" class= "productReleted"  src=" ` + auto2.imgSrc + `"alt = ` + auto2.description + `` + "<br><br>"
-        contenido2 += `<h6 id="autos-name" class="mb-1">` + auto2.name + `</h6>` + "<br>";
+        contenido2 += "<br>" + `<img onclick="redirigirProductos()" id="imgReletedProduct" class= "productReleted"  src=" ` + auto2.imgSrc + `"alt = ` + auto2.description + `` + "<br><br>"
+        contenido2 += `<h6 onclick="redirigirProductos()" id="autos-name" class="mb-1">` + auto2.name + `</h6>` + "<br>";
         contenido2 += `<small>` + auto2.description + `</small>`
 
     }
