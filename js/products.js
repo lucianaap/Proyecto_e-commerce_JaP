@@ -7,9 +7,11 @@ let sort_by_menor_precio = "Menor Precio"
 let sort_by_mayor_precio = "Mayor Precio"
 let currentSortCriteria;
 
+
 function masInfo(){
     window.location = "product-info.html";
 }
+
 
 function showProductsList() {
 

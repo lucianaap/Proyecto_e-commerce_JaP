@@ -12,9 +12,6 @@ function showReletedProducts() {
     let contenido1 = "";
     let contenido2 = "";
 
-
-    for (let i = 3; i < productsArrayReletedProducts.length; i++) {
-
         let auto1 = productsArrayReletedProducts[1];
         let auto2 = productsArrayReletedProducts[3]
 
@@ -25,13 +22,16 @@ function showReletedProducts() {
         contenido2 += `<h6 onclick="redirigirProductos()" id="autos-name" class="mb-1">` + auto2.name + `</h6>` + "<br>";
         contenido2 += `<small>` + auto2.description + `</small>`
 
-    }
 
     document.querySelector("#reletedProducts1").innerHTML = contenido1;
     document.querySelector("#reletedProducts2").innerHTML = contenido2;
 
 
 }
+
+
+    
+
 
 
 function showImagesGallery(array) {
@@ -85,6 +85,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
             let productCostHTML = document.getElementById("productCost");
             let productCurrencyHTML = document.getElementById("productCurrency");
             let productCategoryHTML = document.getElementById("productCategory");
+            let reletedProducts = document.querySelector("#reletedProducts");
+
 
 
             productNameHTML.innerHTML = product.name;
