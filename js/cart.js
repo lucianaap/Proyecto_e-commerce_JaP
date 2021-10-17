@@ -29,8 +29,9 @@ function calcularSubtotal(precio, i){
     let cantidadProducto = Number(document.querySelector(`#cantidadProductos${i}`).value);
     let subTotal = precio * cantidadProducto;
 
-    if(i = 1){
-        subTotal = (precio * 40) * cantidadProducto;
+    if (i === 1){
+        subTotal = (precio * 40) * cantidadProducto
+
     }
 
     document.querySelector(`#productosSubtotal${i}`).innerHTML = subTotal + "<small> UYU </small>";
@@ -70,7 +71,7 @@ function showProductosComprados(array) {
         
         <td> <span class="subtotal" id="productosSubtotal${i}">${sub} <small>UYU</small><span></td>
 
-        <td>${productos.currency} </td>
+        <td><span id="currencyProducts${i}">${productos.currency}</span></td>
        
         </tr>
     
