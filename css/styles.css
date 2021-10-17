@@ -360,4 +360,16 @@ filter: grayscale(0%);
   margin: -150px 0px 0px 600px;
 }
 
+#productosCarrito{
+  width: 100px;
+  height: 100px;
+}
+
+#cantidadProductos{
+  width: 45px;
+
+}
+
+
+
 

@@ -37,35 +37,171 @@
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="inicio.html">Portada</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <div id="user">
-              </div>
-            </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
-            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-            <button id="cerrarSesion" class="dropdown-item" onclick="cerrarSesion()">Cerrar sesión</button>
+      <a class="py-2 d-none d-md-inline-block" href="inicio.html">Portada</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <div id="user">
           </div>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <button id="cerrarSesion" class="dropdown-item" onclick="cerrarSesion()">Cerrar sesión</button>
         </div>
+      </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+
+
+
+  <div class="text-center p-4">
+    <h1>Mi carrito</h1>
   </div>
+  <br />
+  <hr />
+  <div class="container">
+
+    <div class="row justify-content-between">
+
+      <div class="col-sm-5">
+        <h6 class="text-center"><b>Detalle del pedido</b> </h6>
+        <small>Cotización dólar: 1 USD = $40</small> 
+        <br />
+        <br />
+
+        <div class="table-responsive-xl">
+          <table class="table">
+  
+          <thead>
+          <tr>
+  
+          <th></th>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Moneda</th>
+  
+          </tr>
+  
+          </thead>
+  
+      <tbody id="articuloComprado">
+      
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>Subtotal</th>
+          <th></th>
+          <th id="cantidadTotal"></th>
+          <th id="totalSubtotales"></th>
+          <th>UYU</th>
+          
+
+        </tr>
+      </tfoot>
+     
+
+    </table>
+    </div>
+
+        
+
+        <hr />
+        <small><b>¿Tienes algún cupón de descuento?</b></small>
+        <div>
+          <input id="cuponDescuento" maxlength="32" type="text" placeholder="Ingresa el código">
+          <button type="submit" id="btnAplicarCupon" class="btn btn-outline-success btn-sm">Aplicar cupón</button>
+          <br />
+          <small>El cupón debe tener 7 carácteres</small>
+          <br /><br />
+          <p id="mensajeDescuento"></p>
+        </div>
+
+      </div>
+
+
+      <div class="col-sm-5">
+        <h6 class="text-center"><b>Datos de facturación</b> </h6> <br />
+        <form action="">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><b>Dirección</b></span>
+            </div>
+            <input type="text" aria-label="Calle" placeholder="Calle" class="form-control">
+            <input type="text" aria-label="Numero" placeholder="Número" class="form-control">
+            <input type="text" aria-label="Esquina" placeholder="Esquina" class="form-control">
+          </div>
+          <div>
+            <br />
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01"><b>País</b></label>
+                <select class="custom-select" id="inputGroupSelect01">
+                  <option selected>Elegir un país</option>
+                  <option value="1">Uruguay</option>
+                  <option value="2">Argentina</option>
+                  <option value="3">Brasil</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect02"><b>Tipo de envío</b> </label>
+                <select class="custom-select" id="inputGroupSelect02">
+                  <option selected>Elegir un tipo de envío</option>
+                  <option value="1">Premium (2-5 días)- Costo del 15% del subtotal</option>
+                  <option value="2">Express (5-8 días)- Costo del 7% del subtotal</option>
+                  <option value="3">Standar (12-15 días)- Costo del 5% del subtotal</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect03"><b>Forma de pago</b> </label>
+                <select class="custom-select" id="inputGroupSelect03">
+                  <option selected>Elegir una forma de pago</option>
+                  <option value="1">Transferencia bancaria</option>
+                  <option value="2">Tarjeta de crédito</option>
+                </select>
+              </div>
+            </div>
+            <hr />
+            <br />
+            <div>
+              <p id="precioTotal"><b>Importe total:</b></p>
+            </div>
+            <br />
+            <div id="terminosCondiciones">
+              <span class="toggleButton">
+                <input type="checkbox" value="1" required="">
+                <small><b>Estoy de acuerdo con los <a href="https://terminosycondicionesdeusoejemplo.com/"
+                      target="_blank">Términos y condiciones</a></b></small>
+              </span>
+            </div>
+            <br /> <br />
+            <div>
+              <button type="button" class="btn btn-dark btn-lg">Comprar</button>
+            </div>
+        </form>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
-      <div></div>
+      <div> </div>
       <div></div>
       <div></div>
       <div></div>

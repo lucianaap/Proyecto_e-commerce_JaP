@@ -139,8 +139,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
     })
 
 
-
-
     document.getElementById("buscador").addEventListener("input", function (e) {
         buscar = document.getElementById("buscador").value.toLowerCase();
 
