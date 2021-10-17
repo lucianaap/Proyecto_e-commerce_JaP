@@ -53,9 +53,7 @@ function showProductosComprados(array) {
 
         if (productos.currency === "USD"){
             sub = productos.count * (productos.unitCost * 40)
-        } else{
-            sub
-        }
+        } 
 
         contenido += `
             
