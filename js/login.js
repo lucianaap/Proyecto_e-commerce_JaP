@@ -1,6 +1,5 @@
 let inputEmail = document.getElementById("email-form");
 let inputContraseña = document.getElementById("password-form")
-
 let imgSesion = localStorage.setItem("img",`<a href="https://ibb.co/n3vW4GX"><img src="https://i.ibb.co/DGyqmJB/aziz-acharki-549137-unsplash-1200x775.jpg" width="50px" alt="aziz-acharki-549137-unsplash-1200x775" border="0"></a>`)
 
 function loginRedirectAndSaveUser(){
