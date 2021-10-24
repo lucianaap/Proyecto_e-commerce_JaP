@@ -43,7 +43,12 @@ var getJSONData = function(url){
 
 function cerrarSesion(){
   window.location = "index.html"
-  localStorage.removeItem("User-Logged")
+  localStorage.removeItem("User-Logged");
+  localStorage.removeItem("userName");
+  localStorage.removeItem("userSurname");
+  localStorage.removeItem("userAge");
+  localStorage.removeItem("userEmail");
+  localStorage.removeItem("userTel");
 }
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
@@ -52,12 +57,16 @@ function cerrarSesion(){
 document.addEventListener("DOMContentLoaded", function(e){
   let userLogged = localStorage.getItem("User-Logged")
   let user = document.getElementById("user")
+  let imgSesion = localStorage.getItem("img")
+  let img = document.querySelector("#imgUser")
 
   if (userLogged){
 
     userLogged = JSON.parse(userLogged)
 
     user.innerText = user.innerText + userLogged.email;
+    
+    img.innerHTML = img.innerHTML + imgSesion
   }
 
 

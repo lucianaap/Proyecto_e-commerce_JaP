@@ -37,31 +37,143 @@
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="inicio.html">Portada</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <div id="user">
+      <a class="py-2 d-none d-md-inline-block" href="inicio.html">Portada</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+
+          <div class="container">
+
+            <div class="row justify-content-between">
+
+              <div class="col-sm-3" id="imgUser">
               </div>
-            </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
-            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-            <button id="cerrarSesion" class="dropdown-item" onclick="cerrarSesion()">Cerrar sesión</button>
+
+                <div id="user">
+                </div>
+
+            </div>
+          
           </div>
+          
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <button id="cerrarSesion" class="dropdown-item" onclick="cerrarSesion()">Cerrar sesión</button>
         </div>
+      </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <div class="container">
+    <div class="text-center p-4">
+      <h2> <b>Mi cuenta</b></h2>
+      <hr /><br />
     </div>
+
+    <div class="row justify-content-between">
+
+      <div class="col-sm-5">
+        <div>
+          <h5><b>Modificar datos</b></h5>
+          <hr />
+        </div>
+
+        <div class="table-responsive-sm">
+          <form id="formDatos" action="">
+            <table class="table table-hover">
+
+              <tr>
+                <td> <label for="txtNombre"><b>Nombre</b></label></td>
+                <td><input type="text" name="nombre" id="txtNombre"></td>
+
+              </tr>
+
+              <tr>
+                <td><label for="txtApellido"><b>Apellido</b></label></td>
+                <td> <input type="text" name="apellido" id="txtApellido"> </td>
+              </tr>
+
+              <tr>
+                <td><label for="txtEdad"><b>Edad</b></label></td>
+                <td><input type="text" name="edad" id="txtEdad"></td>
+              </tr>
+
+              <tr>
+                <td><label for="txtEmail"><b>Email</b></label></td>
+                <td> <input type="email" name="email" id="txtEmail"></td>
+              </tr>
+
+              <tr>
+                <td><label for="txtTelefono"><b>Telefono</b></label></td>
+                <td> <input type="text" name="telefono" id="txtTelefono"></td>
+              </tr>
+
+            </table>
+            <br />
+          </form>
+          <button class="btn btn-info" id="btnGuardarCambios" onclick="guardarDatosCuenta()">Guardar cambios</button>
+          <button class="btn btn-info" onclick="mostrarDatos()">Mostrar datos</button>
+          <br /><br /><hr />
+        </div>
+
+        
+
+
+      </div>
+
+      <div class="col-sm-5">
+        <div>
+          <h5><b>Mis datos</b></h5>
+          <hr />
+        </div>
+
+        <div class="table-responsive-sm">
+
+          <table class="table table-hover">
+
+            <tr>
+              <td>Nombre</td>
+              <td><span id="mostrarNombre"></span></td>
+            </tr>
+
+            <tr>
+              <td>Apellido</td>
+              <td><span id="mostrarApellido"></span></td>
+            </tr>
+
+            <tr>
+              <td>Edad</td>
+              <td><span id="mostrarEdad"></span></td>
+            </tr>
+
+            <tr>
+              <td>Email</td>
+              <td><span id="mostrarEmail"></span></td>
+            </tr>
+
+            <tr>
+              <td>Teléfono</td>
+              <td><span id="mostrarTelefono"></span></td>
+            </tr>
+
+          </table>
+
+        </div>
+
+
+
+      </div>
+
+      
+    </div>
+
   </div>
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
