@@ -30,7 +30,7 @@ function mostrarDatos(){
     let mostrarDatosEdad = document.querySelector("#mostrarEdad");
 
 
-    if (!nombreGuardado || nombreGuardado === " " || !apellidoGuardado || apellidoGuardado === " "|| !emailGuardado || emailGuardado === " " || !telefonoGuardado || telefonoGuardado === " " || !edadGuardado || edadGuardado === " "){
+    if (!nombreGuardado || !apellidoGuardado || !emailGuardado  || !telefonoGuardado || !edadGuardado){
         alert ("No hay datos para mostrar, o falta completar algún dato. Complete todos los campos para ver su información")
     }
  
