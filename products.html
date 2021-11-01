@@ -24,7 +24,8 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
           <div class="container">
 
             <div class="row justify-content-between">
@@ -32,13 +33,13 @@
               <div class="col-sm-3" id="imgUser">
               </div>
 
-                <div id="user">
-                </div>
+              <div id="user">
+              </div>
 
             </div>
-          
+
           </div>
-          </button>
+        </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
           <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
@@ -56,23 +57,23 @@
         categoría: <strong>Autos</strong>.</p>
     </div>
     <div>
-
+ 
     </div>
-    
+
     <div>
       <div>
         <p class="txt-ordenar"><b>Ordenar por</b>
         <div id="search-options">
-          <input  class="ordenamiento" type="button" id="btn-mas-vendidos"  value="Relevancia">
+          <input class="ordenamiento" type="button" id="btn-mas-vendidos" value="Relevancia">
           <input class="ordenamiento" type="button" id="btn-min-precio" value="Menor precio">
           <input class="ordenamiento" type="button" id="btn-max-precio" value="Mayor precio">
         </div>
-        <div >
+        <div>
           <p id="txt-precio">Filtrar por precio</p>
           <div id="filtrado">
             <input type="number" placeholder="Precio mínimo" id="filtroPrecioMinimo">
             <input type="number" placeholder="Precio máximo" id="filtroPrecioMaximo">
-            <input type="button" id="filtro" onclick="filtrarPrecios()" value="Filtrar"> 
+            <input type="button" id="filtro" onclick="filtrarPrecios()" value="Filtrar">
             <input type="button" id="limpiar" onclick="limpiarFiltro()" value="Vaciar Campos">
           </div>
 
@@ -84,9 +85,18 @@
         </div>
       </div>
 
-
-      <div id="lista-productos" class="container p-5">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="card-deck" id="lista-productos">
+              
+            </div>
+            
+          </div>
+        </div>
       </div>
+
+     
       <footer class="text-muted bg-light">
         <div class="container">
           <p class="float-right">

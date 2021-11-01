@@ -8,7 +8,7 @@ let sort_by_mayor_precio = "Mayor Precio"
 let currentSortCriteria;
 
 
-function masInfo(){
+function masInfo() {
     window.location = "product-info.html";
 }
 
@@ -25,13 +25,22 @@ function showProductsList() {
 
             if ((buscar == undefined || autos.name.toLowerCase().includes(buscar))) {
 
-                list += "<br>" + `<img id="imagen-producto" src=" ` + autos.imgSrc + `"alt = ` + autos.description + `` + "<br>" + "<br>"
-                list += `<h4 id="autos-name" class="mb-1">` + autos.name + `</h4>` + "<br>";
-                list += autos.description + "<br>";
-                list += autos.cost + " " + autos.currency + "<br>" + "<br>";
-                list += '<button id="mas-info" onclick="masInfo()">Más información</button><br/><br/>'
-                list += `<small id="autos-soldCount">` + autos.soldCount + ` unidades vendidas</small>` + "<br>"
-                list += "<br><hr><br>"
+                list += `<div class="card" style="width: 18rem;" >
+            
+                <img class="card-img-top" id="imagen-producto" src="${autos.imgSrc} " alt="${autos.description} ">
+                <div class="card-body">
+                <h4 id="autos-name" class="card-title">${autos.name} </h4>
+                <p>${autos.description}</p>
+                <p>${autos.cost}${autos.currency}</p>
+                <button id="mas-info" onclick="masInfo()">Más información</button>
+                <br/><br/>
+                </div>
+                <div class="card-footer">
+                <small id="autos-soldCount">${autos.soldCount} unidades vendidas</small>
+                </div>
+                </div>
+              `
+
             }
         }
         document.getElementById("lista-productos").innerHTML = list;
@@ -124,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             showProductsList(productsArray);
         }
     });
-    
+
     document.getElementById("btn-min-precio").addEventListener("click", function () {
         OrdenarYMostarProductos(sort_by_menor_precio);
     })
@@ -153,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         showProductsList();
     })
 
-    
+
 
 
 });

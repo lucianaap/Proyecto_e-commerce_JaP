@@ -52,13 +52,13 @@
               <div class="col-sm-3" id="imgUser">
               </div>
 
-                <div id="user">
-                </div>
+              <div id="user">
+              </div>
 
             </div>
-          
+
           </div>
-          
+
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
@@ -84,44 +84,55 @@
         </div>
 
         <div class="table-responsive-sm">
-          <form id="formDatos" action="">
+          <form id="formDatos" class='needs-validation' action="" novalidate>
             <table class="table table-hover">
 
               <tr>
                 <td> <label for="txtNombre"><b>Nombre</b></label></td>
-                <td><input type="text" name="nombre" id="txtNombre"></td>
+                <td><input type="text" class="form-control" name="nombre" id="txtNombre" required></td>
+                <td class="invalid-feedback"></td>
 
               </tr>
 
               <tr>
                 <td><label for="txtApellido"><b>Apellido</b></label></td>
-                <td> <input type="text" name="apellido" id="txtApellido"> </td>
+                <td> <input type="text" class="form-control" name="apellido" id="txtApellido" required> </td>
+                <td class="invalid-feedback"></td>
+
               </tr>
 
               <tr>
                 <td><label for="txtEdad"><b>Edad</b></label></td>
-                <td><input type="text" name="edad" id="txtEdad"></td>
+                <td><input type="text" class="form-control" name="edad" id="txtEdad" required></td>
+                <td class="invalid-feedback"></td>
               </tr>
 
               <tr>
                 <td><label for="txtEmail"><b>Email</b></label></td>
-                <td> <input type="email" name="email" id="txtEmail" ></td>
+                <td> <input type="email" class="form-control" name="email" id="txtEmail" required></td>
+                <td class="invalid-feedback"></td>
               </tr>
 
               <tr>
                 <td><label for="txtTelefono"><b>Telefono</b></label></td>
-                <td> <input type="text" name="telefono" id="txtTelefono"></td>
-              </tr>
+                <td> <input type="text" class="form-control" name="telefono" id="txtTelefono" required></td>
+                <td class="invalid-feedback"></td>
 
+              </tr>
             </table>
-            <br />
+            <button type="submit" class="btn btn-info" id="btnGuardarCambios" onclick="guardarDatosCuenta()">Guardar
+              cambios</button>
+            <br /><br />
+
           </form>
-          <button class="btn btn-info" id="btnGuardarCambios" onclick="guardarDatosCuenta()">Guardar cambios</button>
+
           <button class="btn btn-info" onclick="mostrarDatos()">Mostrar datos</button>
-          <br /><br /><hr />
+          <br /><br />
+          <hr />
         </div>
 
-        
+       
+
 
 
       </div>
@@ -169,7 +180,7 @@
 
       </div>
 
-      
+
     </div>
 
   </div>
