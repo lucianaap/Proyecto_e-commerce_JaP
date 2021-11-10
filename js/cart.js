@@ -80,6 +80,19 @@ function showProductosComprados(array) {
     calcularTotal()
 }
 
+
+function seleccionarPago () {
+    let pagoSeleccionado = document.querySelector("#inputGroupSelect01")
+
+    if ( pagoSeleccionado.value === 1) {
+
+        document.querySelector("#transferenciaBancaria").style.display = "block";
+
+    }else if (pagoSeleccionado.value === 2) {
+
+        document.querySelector("#tarjetaCredito").style.display = "block";
+    }
+}
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.

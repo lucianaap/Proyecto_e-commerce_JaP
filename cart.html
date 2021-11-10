@@ -52,11 +52,11 @@
               <div class="col-sm-3" id="imgUser">
               </div>
 
-                <div id="user">
-                </div>
+              <div id="user">
+              </div>
 
             </div>
-          
+
           </div>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -81,46 +81,46 @@
 
       <div class="col-sm-5">
         <h6 class="text-center"><b>Detalle del pedido</b> </h6>
-        <small>Cotización dólar: 1 USD = $40</small> 
+        <small>Cotización dólar: 1 USD = $40</small>
         <br />
         <br />
 
         <div class="table-responsive-xl">
           <table class="table">
-  
-          <thead>
-          <tr>
-  
-          <th></th>
-          <th>Producto</th>
-          <th>Cantidad</th>
-          <th>Precio</th>
-          <th>Moneda</th>
-  
-          </tr>
-  
-          </thead>
-  
-      <tbody id="articuloComprado">
-      
-      </tbody>
-      <tfoot>
-        <tr>
-          <th>Subtotal</th>
-          <th></th>
-          <th id="cantidadTotal"></th>
-          <th id="totalSubtotales"></th>
-          <th>UYU</th>
-          
 
-        </tr>
-      </tfoot>
-     
+            <thead>
+              <tr>
 
-    </table>
-    </div>
+                <th></th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Moneda</th>
 
-        
+              </tr>
+
+            </thead>
+
+            <tbody id="articuloComprado">
+
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Subtotal</th>
+                <th></th>
+                <th id="cantidadTotal"></th>
+                <th id="totalSubtotales"></th>
+                <th>UYU</th>
+
+
+              </tr>
+            </tfoot>
+
+
+          </table>
+        </div>
+
+
 
         <hr />
         <small><b>¿Tienes algún cupón de descuento?</b></small>
@@ -172,16 +172,58 @@
               </div>
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect03"><b>Forma de pago</b> </label>
-                <select class="custom-select" id="inputGroupSelect03">
-                  <option selected>Elegir una forma de pago</option>
-                  <option value="1">Transferencia bancaria</option>
-                  <option value="2">Tarjeta de crédito</option>
-                </select>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalFormaPago">
+              Forma de Pago
+            </button>
+            <div class="modal fade" id="modalFormaPago" tabindex="-1" role="dialog"
+              aria-labelledby="modalFormaPagoCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalFormaPagoCenterTitle">Elegir una forma de pago</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01"><b>Forma de pago</b></label>
+                        <select onchange="seleccionarPago()" class="custom-select" id="inputGroupSelect01">
+                          <option selected>Elegir una forma de pago</option>
+                          <option value="1">Tarjeta de crédito</option>
+                          <option value="2">Transferencia bancaria</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div id="tipoDePago">
+                      <div id="transferenciaBancaria" style="display: none;">
+                        <p>El número de cuenta al que transferir es:<b> 12345678910</b></p>
+                        <label for="txtNumCuenta">Número de cuenta</label>
+                        <input type="text" name="numCuenta" id="txtNumCuenta"/>
+                      </div>
+                      <div id="tarjetaCredito" style="display: none;">
+                        <p>Datos de la tarjeta</p>
+                        <label for="txtNumTarjeta">Número de tarjeta</label>
+                        <input type="text" name="numTarjeta" id="txtNumTarjeta"/>
+                        <br/>
+                        <label for="txtVtoTarjeta">Vencimiento Tarjeta</label>
+                        <input type="text" name="vtoTarjeta" id="txtVtoTarjeta"/>
+                        <br/>
+                        <label for="txtCodigoTarjeta">Codigo de tarjeta</label>
+                        <input type="text" name="codigoTarjeta" id="txtCodigoTarjeta"/>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Seleccionar</button>
+                  </div>
+
+                </div>
               </div>
             </div>
+
             <hr />
             <br />
             <div>
