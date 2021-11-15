@@ -13,23 +13,46 @@ function descuento() {
 
 }
 
-function calcularTotal(){
-
-    let total = 0;
+function calcularTotal() {
+    let tipoEnvio = document.querySelectorAll('.envio');
+    let envio;
+    let totalSinEnvio = 0;
     let subtotales = document.querySelectorAll(".subtotal");
+    let calculoEnvio = 0
 
-    for (let i = 0; i < subtotales.length; i++){
-        total += parseInt(subtotales[i].innerHTML);
+    for (let i = 0; i < subtotales.length; i++) {
+        totalSinEnvio += parseInt(subtotales[i].innerHTML);
     }
-    document.querySelector("#totalSubtotales").innerHTML = total;
+
+    for (let i = 0; i < tipoEnvio.length; i++) {
+
+        if (tipoEnvio[i].checked) {
+            envio = parseInt(tipoEnvio[i].value)
+        }
+    }
+
+    if(envio === 1) {
+        calculoEnvio += (totalSinEnvio * 15) / 100
+
+    }else if (envio === 2) {
+        calculoEnvio += (totalSinEnvio * 7) / 100
+
+    }else{
+        calculoEnvio += (totalSinEnvio * 5) / 100
+    }
+
+    let totalConEnvio = totalSinEnvio + calculoEnvio;
+
+    document.querySelector("#totalSubtotales").innerHTML = totalSinEnvio;
+    document.querySelector('#precioTotal').innerHTML = totalConEnvio;
+
 }
 
-
-function calcularSubtotal(precio, i){
+function calcularSubtotal(precio, i) {
     let cantidadProducto = Number(document.querySelector(`#cantidadProductos${i}`).value);
     let subTotal = precio * cantidadProducto;
 
-    if (i === 1){
+    if (i === 1) {
         subTotal = (precio * 40) * cantidadProducto
 
     }
@@ -38,8 +61,6 @@ function calcularSubtotal(precio, i){
 
     calcularTotal()
 }
-
-
 
 function showProductosComprados(array) {
 
@@ -51,9 +72,9 @@ function showProductosComprados(array) {
 
         let sub = (productos.count * productos.unitCost);
 
-        if (productos.currency === "USD"){
+        if (productos.currency === "USD") {
             sub = productos.count * (productos.unitCost * 40)
-        } 
+        }
 
         contenido += `
             
@@ -65,7 +86,7 @@ function showProductosComprados(array) {
 
         <td><input onchange="calcularSubtotal(${productos.unitCost}, ${i})"  
         id="cantidadProductos${i}" class="cantidadTotal"
-         min="1" max="10" type="number" value="${productos.count}"/></td>
+         min="1" type="number" value="${productos.count}"/></td>
         
         <td> <span class="subtotal" id="productosSubtotal${i}">${sub} <small>UYU</small><span></td>
 
@@ -76,23 +97,16 @@ function showProductosComprados(array) {
         `
         document.querySelector("#articuloComprado").innerHTML = contenido;
     }
-    
+
     calcularTotal()
 }
 
-
-function seleccionarPago () {
-    let pagoSeleccionado = document.querySelector("#inputGroupSelect01")
-
-    if ( pagoSeleccionado.value === 1) {
-
-        document.querySelector("#transferenciaBancaria").style.display = "block";
-
-    }else if (pagoSeleccionado.value === 2) {
-
-        document.querySelector("#tarjetaCredito").style.display = "block";
-    }
+function redirigir(){
+    window.location = CART_BUY_URL
 }
+
+
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -106,5 +120,20 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 
     document.querySelector("#btnAplicarCupon").addEventListener("click", descuento);
+
+    let forms = document.querySelector('.needs-validation');
+
+    forms.addEventListener('submit', function(event){
+        if(forms.checkValidity() === false){
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        forms.classList.add('was-validated')
+    });
+
+
+    document.querySelector('#btnComprar').addEventListener('submit', redirigir)
+
+
 
 });

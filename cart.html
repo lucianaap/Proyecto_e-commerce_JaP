@@ -138,21 +138,22 @@
 
       <div class="col-sm-5">
         <h6 class="text-center"><b>Datos de facturación</b> </h6> <br />
-        <form action="">
+        <form action="" class='needs-validation' novalidate>
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text"><b>Dirección</b></span>
             </div>
-            <input type="text" aria-label="Calle" placeholder="Calle" class="form-control">
-            <input type="text" aria-label="Numero" placeholder="Número" class="form-control">
-            <input type="text" aria-label="Esquina" placeholder="Esquina" class="form-control">
+            <input type="text" aria-label="Calle" placeholder="Calle" class="form-control" required>
+            <p class="invalid-feedback">Debe escribir su direccion</p>
+            <input type="text" aria-label="Numero" placeholder="Número" class="form-control" required>
+            <input type="text" aria-label="Esquina" placeholder="Esquina" class="form-control" required>
           </div>
           <div>
             <br />
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01"><b>País</b></label>
-                <select class="custom-select" id="inputGroupSelect01">
+                <select class="custom-select" id="inputGroupSelect01" required>
                   <option selected>Elegir un país</option>
                   <option value="1">Uruguay</option>
                   <option value="2">Argentina</option>
@@ -160,92 +161,116 @@
                 </select>
               </div>
             </div>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect02"><b>Tipo de envío</b> </label>
-                <select class="custom-select" id="inputGroupSelect02">
-                  <option selected>Elegir un tipo de envío</option>
-                  <option value="1">Premium (2-5 días)- Costo del 15% del subtotal</option>
-                  <option value="2">Express (5-8 días)- Costo del 7% del subtotal</option>
-                  <option value="3">Standar (12-15 días)- Costo del 5% del subtotal</option>
-                </select>
-              </div>
-            </div>
-
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalFormaPago">
-              Forma de Pago
-            </button>
-            <div class="modal fade" id="modalFormaPago" tabindex="-1" role="dialog"
-              aria-labelledby="modalFormaPagoCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="modalFormaPagoCenterTitle">Elegir una forma de pago</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="input-group mb-3">
-                      <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01"><b>Forma de pago</b></label>
-                        <select onchange="seleccionarPago()" class="custom-select" id="inputGroupSelect01">
-                          <option selected>Elegir una forma de pago</option>
-                          <option value="1">Tarjeta de crédito</option>
-                          <option value="2">Transferencia bancaria</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div id="tipoDePago">
-                      <div id="transferenciaBancaria" style="display: none;">
-                        <p>El número de cuenta al que transferir es:<b> 12345678910</b></p>
-                        <label for="txtNumCuenta">Número de cuenta</label>
-                        <input type="text" name="numCuenta" id="txtNumCuenta"/>
-                      </div>
-                      <div id="tarjetaCredito" style="display: none;">
-                        <p>Datos de la tarjeta</p>
-                        <label for="txtNumTarjeta">Número de tarjeta</label>
-                        <input type="text" name="numTarjeta" id="txtNumTarjeta"/>
-                        <br/>
-                        <label for="txtVtoTarjeta">Vencimiento Tarjeta</label>
-                        <input type="text" name="vtoTarjeta" id="txtVtoTarjeta"/>
-                        <br/>
-                        <label for="txtCodigoTarjeta">Codigo de tarjeta</label>
-                        <input type="text" name="codigoTarjeta" id="txtCodigoTarjeta"/>
-                      </div>
-                    </div>
-                    
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Seleccionar</button>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-
-            <hr />
-            <br />
             <div>
-              <p id="precioTotal"><b>Importe total:</b></p>
-            </div>
-            <br />
-            <div id="terminosCondiciones">
-              <span class="toggleButton">
-                <input type="checkbox" value="1" required="">
-                <small><b>Estoy de acuerdo con los <a href="https://terminosycondicionesdeusoejemplo.com/"
-                      target="_blank">Términos y condiciones</a></b></small>
-              </span>
-            </div>
-            <br /> <br />
-            <div>
-              <button type="button" class="btn btn-dark btn-lg">Comprar</button>
-            </div>
-        </form>
-
+              <b>Tipo de envío</b>
+              <div>
+                <input onchange="calcularTotal()" style="display: block;" value="1" class="envio" type="radio"
+                name="tipoEnvio" id="envioPremium" checked>
+              <label style="color: black;" for="envioPremium">Premium (2-5 días)- Costo del 15% del subtotal</label>
+              <input onchange="calcularTotal()" style="display: block;" value="2" class="envio" type="radio"
+                name="tipoEnvio" id="envioExpress">
+              <label style="color: black;" class="envio" for="envioExpress">Express (5-8 días)- Costo del 7% del
+                subtotal</label>
+              <input onchange="calcularTotal()" style="display: block;" value="3" type="radio" name="tipoEnvio"
+                id="envioStandard">
+              <label style="color: black;" for="envioStandard">Standard (12-15 días)- Costo del 5% del subtotal
+              </div>   
       </div>
+      <br />
 
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalFormaPago">
+        Forma de Pago
+      </button>
+      <div class="modal fade" id="modalFormaPago" tabindex="-1" role="dialog"
+        aria-labelledby="modalFormaPagoCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalFormaPagoCenterTitle">Elegir una forma de pago</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="accordion" id="accordionTipoPago">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <input value="1" checked class="tipoDePago" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne" type="radio" name="tipoPago"
+                        id="radioTarjetaCredito" style="display: block;">
+                      <label style="color: black;" for="radioTarjetaCredito">Tarjeta de Credito</label>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                      data-parent="#accordionTipoPago">
+                      <div class="card-body">
+                        <div id="tarjetaCredito">
+                          <p>Datos de la tarjeta</p>
+                          <label style="color: black;" for="txtNumTarjeta">Número de tarjeta</label>
+                          <input type="text" name="numTarjeta" id="txtNumTarjeta" />
+                          <br />
+                          <label style="color: black;" for="txtVtoTarjeta">Vencimiento Tarjeta</label>
+                          <input type="text" name="vtoTarjeta" id="txtVtoTarjeta" />
+                          <br />
+                          <label style="color: black;" for="txtCodigoTarjeta">Codigo de tarjeta</label>
+                          <input type="text" name="codigoTarjeta" id="txtCodigoTarjeta" />
+                          <label style="color: black;" for="txtCuotas">Cantidad cuotas</label>
+                          <input type="text" name="codigoTarjeta" id="txtCuotas" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingTwo">
+                      <input value="2" class="tipoDePago" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="false" aria-controls="collapseTwo" type="radio" name="tipoPago"
+                        id="radioTransferencia" style="display: block;">
+                      <label style="color: black;" for="radioTransferencia">Transferencia bancaria</label>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                      data-parent="#accordionTipoPago">
+                      <div class="card-body">
+                        <div id="transferenciaBancaria">
+                          <p>El número de cuenta al que transferir es:<b> 12345678910</b></p>
+                          <label style="color: black;" for="txtNumCuenta">Número de cuenta</label>
+                          <input type="text" name="numCuenta" id="txtNumCuenta" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="pagoSeleccionado">Seleccionar</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <br />
+    <hr />
+    <br />
+    <div>
+      <p><b>Importe total: $</b> <span><b id="precioTotal"></b></span></p>
+    </div>
+    <br />
+    <div id="terminosCondiciones">
+      <span class="toggleButton">
+        <input type="checkbox" value="1" required>
+        <small><b>Estoy de acuerdo con los <a href="https://terminosycondicionesdeusoejemplo.com/"
+              target="_blank">Términos y condiciones</a></b></small>
+      </span>
+    </div>
+    <br /> <br />
+    <div>
+      <button type="button" id="btnComprar" class="btn btn-dark btn-lg">Comprar</button>
+    </div>
+    </form>
+
+  </div>
+
+  </div>
 
 
 
